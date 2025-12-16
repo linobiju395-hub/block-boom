@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Gemini Block Blast</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              game: {
+                bg: 'var(--color-bg)',
+                board: 'var(--color-board)',
+                empty: 'var(--color-empty)',
+                primary: 'var(--color-primary)',
+                secondary: 'var(--color-secondary)',
+                tertiary: 'var(--color-tertiary)',
+                accent: 'var(--color-accent)',
+                text: 'var(--color-text)',
+              }
+            },
+            animation: {
+              'pop': 'pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+              'fade-out': 'fadeOut 0.5s ease-out forwards',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              pop: {
+                '0%': { transform: 'scale(0.8)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              },
+              fadeOut: {
+                '0%': { opacity: '1', transform: 'scale(1)' },
+                '100%': { opacity: '0', transform: 'scale(1.2)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Prevent scrolling / bouncing on mobile while dragging */
+      body {
+        overscroll-behavior: none;
+        touch-action: none;
+        background-color: var(--color-bg, #1a1a2e);
+        color: var(--color-text, #ffffff);
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+      
+      /* Dynamic Theme Variables Default (Dark Cosmic) */
+      :root {
+        --color-bg: #1a1a2e;
+        --color-board: #16213e;
+        --color-empty: #0f3460;
+        --color-primary: #e94560;
+        --color-secondary: #0f3460;
+        --color-tertiary: #533483;
+        --color-accent: #e94560;
+        --color-text: #ffffff;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
