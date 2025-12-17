@@ -1,5 +1,5 @@
 {
-  "name": "block--boom",
+  "name": "block-boom",
   "compatibility_date": "2025-12-16",
   "assets": {
     "directory": "./dist"
